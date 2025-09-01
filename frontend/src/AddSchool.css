@@ -1,0 +1,119 @@
+.add-school-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-school-container h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  .school-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #34495e;
+    font-size: 1rem;
+  }
+  
+  .form-group input {
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  }
+  
+  .form-group input[type="file"] {
+    padding: 0.5rem;
+    border: 2px dashed #ddd;
+    background-color: #f8f9fa;
+  }
+  
+  .form-group input[type="file"]:hover {
+    border-color: #3498db;
+    background-color: #e8f4fd;
+  }
+  
+  .error {
+    color: #e74c3c;
+    margin: 0.4rem 0 0 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  
+  .submit-btn {
+    padding: 1rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #219a52;
+  }
+  
+  .submit-btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .add-school-container {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .add-school-container h1 {
+      font-size: 1.6rem;
+    }
+    
+    .form-group input {
+      padding: 0.7rem;
+    }
+    
+    .submit-btn {
+      padding: 0.9rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .add-school-container {
+      margin: 0.5rem;
+      padding: 1.2rem;
+    }
+    
+    .add-school-container h1 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+    }
+  }

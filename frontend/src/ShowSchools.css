@@ -1,0 +1,142 @@
+.show-schools-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+  }
+  
+  .show-schools-container h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+  
+  .loading, .error-message {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 3rem;
+    color: #7f8c8d;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    background-color: #fdeaea;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+  }
+  
+  .schools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .school-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .school-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .school-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .school-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .school-card:hover .school-image img {
+    transform: scale(1.05);
+  }
+  
+  .school-info {
+    padding: 1.5rem;
+  }
+  
+  .school-info h3 {
+    margin: 0 0 1rem 0;
+    color: #2c3e50;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  
+  .school-info p {
+    margin: 0.5rem 0;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .school-info p:first-of-type {
+    color: #34495e;
+    font-weight: 500;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .show-schools-container {
+      padding: 1.5rem 1rem;
+    }
+    
+    .show-schools-container h1 {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+    
+    .schools-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .school-image {
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .show-schools-container {
+      padding: 1rem 0.5rem;
+    }
+    
+    .show-schools-container h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .schools-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      padding: 0 0.5rem;
+    }
+    
+    .school-card {
+      margin: 0 0.5rem;
+    }
+    
+    .school-info {
+      padding: 1.2rem;
+    }
+    
+    .school-info h3 {
+      font-size: 1.2rem;
+    }
+  }

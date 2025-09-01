@@ -10,12 +10,14 @@ function ShowSchools() {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
+        // Try to fetch from the real backend
         const response = await axios.get('https://schoolmanagement-production-5325.up.railway.app/api/schools');
         setSchools(response.data);
         setLoading(false);
       } catch (err) {
         console.error('Error fetching schools:', err);
-        // Show sample data if API fails
+        // If backend fails, use mock data
+        setError('Could not connect to server. Showing sample data.');
         setSchools([
           {
             id: 1,
@@ -28,7 +30,7 @@ function ShowSchools() {
             id: 2,
             name: "Mumbai International School",
             address: "456 Knowledge Road, Bandra West",
-            city: "Mumbai", 
+            city: "Mumbai",
             image: "school2.jpg"
           },
           {
@@ -51,6 +53,7 @@ function ShowSchools() {
   return (
     <div className="show-schools-container">
       <h1>Schools Directory</h1>
+      {error && <p className="error-message">{error}</p>}
       <div className="schools-grid">
         {schools.length === 0 ? (
           <p>No schools found. Add some schools to get started!</p>
@@ -61,6 +64,9 @@ function ShowSchools() {
                 <img 
                   src={`https://via.placeholder.com/300x200/4CAF50/white?text=${encodeURIComponent(school.name)}`} 
                   alt={school.name}
+                  onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/200x150?text=Image+Not+Found';
+                  }}
                 />
               </div>
               <div className="school-info">

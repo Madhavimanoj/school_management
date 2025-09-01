@@ -10,7 +10,7 @@ function ShowSchools() {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/schools');
+        const response = await axios.get('https://schoolmanagement-production-5325.up.railway.app/api/schools');
         setSchools(response.data);
         setLoading(false);
       } catch (err) {
@@ -37,7 +37,7 @@ function ShowSchools() {
             <div key={school.id} className="school-card">
               <div className="school-image">
                 <img 
-                  src={`http://localhost:5000/schoolImages/${school.image}`} 
+                  src={`https://schoolmanagement-production-5325.up.railway.app/schoolImages/${school.image}`} 
                   alt={school.name} 
                   onError={(e) => {
                     e.target.src = 'https://via.placeholder.com/200x150?text=Image+Not+Found';

@@ -17,7 +17,7 @@ function AddSchool() {
     formData.append('image', data.image[0]);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/schools', formData, {
+      const response = await axios.post('https://schoolmanagement-production-5325.up.railway.app/api/schools', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
